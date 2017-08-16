@@ -54,6 +54,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
+/* STYLE - ESTILOS GERAIS */
 * {
   margin: 0;
   padding: 0;
@@ -70,23 +71,65 @@ body, html {
   height: 100%;
 }
 
+body {
+  font-family: Arial;
+}
+
+/*  __________________NAVBAR__________________ */
+.navbar-inverse {
+  background: #272727;
+  margin: 0;
+}
+.navbar-inverse .navbar-form {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 0;
+}
+.navbar-inverse .navbar-form .form-control {
+  margin: 5px 0;
+}
+@media (max-width: 768px) {
+  .navbar-inverse .navbar-collapse {
+    width: 100%;
+    position: absolute;
+    background: #272727;
+  }
+}
+
+/*  __________________INDEX__________________ */
 .body-login {
   overflow: hidden;
   background: #060606;
 }
 
-.navbar-inverse {
-  background: #272727;
-  margin: 0;
+@media (min-width: 768px) {
+  .imagem-fundo {
+    border: #CC2626 solid 1px;
+    width: 840px;
+    height: 380px;
+    background: url("../images/login/got-md.png") no-repeat center;
+  }
+}
+@media (max-width: 768px) {
+  .imagem-fundo {
+    border: #FFFFFF solid 1px;
+    width: 650px;
+    height: 294px;
+    background: url("../images/login/got-sm.png") no-repeat center;
+  }
+}
+@media (max-width: 400px) {
+  .imagem-fundo {
+    margin: 75px auto;
+    border: #0DE951 solid 1px;
+    width: 310px;
+    height: 140px;
+    background: url("../images/login/got-xs.png") no-repeat center center;
+  }
 }
 
-.imagem-fundo {
-  margin: 100px auto;
-  width: 846px;
-  height: 437px;
-  background: url("../images/logo.png") no-repeat center center;
-}
-
+/*  __________________CADASTRO__________________ */
 .body-cadastro {
   background: #060606;
 }
@@ -94,7 +137,15 @@ body, html {
 .page-header h1 {
   text-align: center;
   color: #FFF;
-  font-size: 40px;
+  font-size: 3em;
+}
+
+.erros {
+  line-height: 1.4em;
+}
+.erros h1 {
+  font-size: 1.4em;
+  font-weight: bold;
 }
 
 .form-cadastro {
@@ -125,13 +176,24 @@ body, html {
   padding: 5px 15px;
 }
 
+/*  __________________JOGO__________________ */
 .body-jogo {
   background-image: url("../images/mapa.png");
   background-position: center;
 }
 
-.casa {
-  margin: 25px auto;
+@media (max-width: 768px) {
+  .casa {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    position: relative;
+  }
+}
+@media (min-width: 769px) {
+  .casa {
+    margin: 25px auto;
+  }
 }
 
 .barra-superior {

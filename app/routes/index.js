@@ -1,15 +1,6 @@
-module.exports = function(app){
+module.exports = function(application){
 
-	app.get('/', function(req, res){
-		res.render('index');
+	application.get('/', function(req, res){		
+		application.app.controllers.index.home(application, req, res);		
 	});
-
-	app.get('/cadastro', function(req, res){
-		res.render('cadastro');
-	});
-
-	app.get('/jogo', function(req, res){
-		res.render('jogo');
-	});
-
 }

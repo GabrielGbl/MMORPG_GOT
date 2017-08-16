@@ -1,3 +1,5 @@
+/*  __________________CADASTRO__________________ */
+
 .body-cadastro{
 	background:#060606;
 }
@@ -6,8 +8,16 @@
 	h1{
 		text-align: center;
 		color:#FFF;
-		font-size:40px;
+		font-size:3em;
 	} 
+}
+
+.erros{	
+	line-height: 1.4em;
+	h1{
+		font-size:1.4em;
+		font-weight:bold;
+	}
 }
 
 .form-cadastro{
