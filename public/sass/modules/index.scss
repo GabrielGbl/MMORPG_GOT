@@ -1,0 +1,28 @@
+*{
+	margin:0;
+	padding:0;
+	@include box-sizing(border-box);
+	@include box-sizing(padding-box);
+}
+
+body, html{
+	width:100%;
+	height: 100%;
+}
+
+.body-login{
+	overflow:hidden;
+	background:#060606;
+}
+
+.navbar-inverse{
+	background:$cor-primaria;
+	margin:0;
+}
+
+.imagem-fundo{
+	margin:100px auto;
+	width:846px;
+	height:437px;
+	background:url('../images/logo.png') no-repeat center center;
+}
