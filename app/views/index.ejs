@@ -17,24 +17,32 @@
     		</div>
 
     		 <div class="collapse navbar-collapse" id="form-login">
-				<form action="/entrar" method="POST" class="navbar-form navbar-right">
-					<input type="text" class="form-control" id="usu_usuario" name="usu_usuario" placeholder="Usuário" required>
-					<input type="password" class="form-control" id="usu_senha" name="usu_senha" placeholder="Senha" required>
+				<form action="/autenticar" method="POST" class="navbar-form navbar-right">
+					<input type="text" class="form-control" id="usu_usuario" name="usu_usuario" placeholder="Usuário">
+					<input type="password" class="form-control" id="usu_senha" name="usu_senha" placeholder="Senha">
 					<button type="submit" class="btn btn-success">Entrar</button>
+					<a class="btn btn-info pull right" href="/cadastro">Cadastrar-se</a>
 				</form>
 			</div>
-
 		</div>
 	</nav>
 
+	<% if(validacao.length > 0){ %>
+		<div class="erros-login">
+			<h1>Erros</h1> 
+				<ul>
+					<% validacao.forEach(function(erro){ %>
+	  					<li><%= erro.msg %></li>
+	  				<% }); %>
+	  			</ul>
+		</div>
+	<% } %>
 
 	<div class="container">
 		<div class="row">
 		<section class="imagem-fundo"></section>	
 		</div>
 	</div>
-
-
 
 </body>
 </html>
