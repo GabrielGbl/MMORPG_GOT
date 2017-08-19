@@ -18,7 +18,7 @@
 
     		 <div class="collapse navbar-collapse" id="form-login">
 				<form action="/autenticar" method="POST" class="navbar-form navbar-right">
-					<input type="text" class="form-control" id="usu_usuario" name="usu_usuario" placeholder="Usuário">
+					<input type="text" class="form-control" value="<%= dados.usu_usuario %>" id="usu_usuario" name="usu_usuario" placeholder="Usuário">
 					<input type="password" class="form-control" id="usu_senha" name="usu_senha" placeholder="Senha">
 					<button type="submit" class="btn btn-success">Entrar</button>
 					<a class="btn btn-info pull right" href="/cadastro">Cadastrar-se</a>
@@ -26,7 +26,7 @@
 			</div>
 		</div>
 	</nav>
-
+	
 	<% if(validacao.length > 0){ %>
 		<div class="erros-login">
 			<h1>Erros</h1> 
@@ -36,11 +36,22 @@
 	  				<% }); %>
 	  			</ul>
 		</div>
-	<% } %>
+	<% }; %>
+	
+	
+	 <% if(dados.length > 0){ %>
+		<div class="erros-login">
+			<h1>Erros</h1> 
+				<p>Usuário ou Senha inválidos!</a>
+		</div>
+	<% }; %>
+
 
 	<div class="container">
 		<div class="row">
-		<section class="imagem-fundo"></section>	
+		<section class="imagem-login">
+			<img class="visible-*-inline-block" src="images/login/login.png" alt="">
+		</section>	
 		</div>
 	</div>
 

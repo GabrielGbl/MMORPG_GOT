@@ -1,5 +1,5 @@
 module.exports.home = function(application, req, res){
-	res.render('index', {validacao:{}});
+	res.render('index', {validacao:{}, dados:{}});
 }
 
 module.exports.autenticar = function(application, req, res){
@@ -12,10 +12,13 @@ module.exports.autenticar = function(application, req, res){
 	const erros = req.validationErrors();
 
 	if(erros){
-		res.render('index', {validacao:erros});
+		res.render('index', {validacao:erros, dados:dadosForm});
 		return;
 	}
 
-	res.render('jogo');
+	const connection = application.config.dbConnection;
+	const UsuariosDAO = new application.app.models.UsuariosDAO(connection);
+
+	UsuariosDAO.autenticar(dadosForm, req, res);
 
 }

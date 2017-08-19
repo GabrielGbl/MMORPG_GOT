@@ -12,6 +12,7 @@
 	right:0;
 	margin:15px 0;	
 	padding:15px;
+	z-index: 2;
 	background:#D22020;
 	border-radius:3px;
 	color:#FFF;
@@ -24,29 +25,28 @@
 	}
 }
 
-.imagem-fundo{
-	@media (min-width:768px){
-		margin:100px auto;
+.imagem-login{
+	z-index:1;
+	
+	@media (max-width:768px){
+		img{
+			width:100%;
+			height:auto;
+			position: absolute;
+			top:50%;
+			margin-top:25px;			
+			transform: translateY(-50%);
+		}
+	}
+
+	@media(min-width:769px){		
+		position:absolute;
+		top:50%;
+		left:50%;
+		margin-left:-420px;
+		margin-top:-190px;
 		width:840px;
 		height:380px;
-		background:url('../images/login/got-md.png') no-repeat;
+		background:url('../images/login/login.png') no-repeat;
 	}
-
-	@media (max-width:768px){
-		border:#FFFFFF solid 1px;
-		width:650px;
-		height:294px;
-		background:url('../images/login/got-sm.png') no-repeat;
-	}
-	
-	
-	@media (max-width:400px){
-		margin:75px auto;
-		border:#0DE951 solid 1px;
-		width:310px;
-		height:140px;
-		background:url('../images/login/got-xs.png') no-repeat;
-	}
-
-	
 }
