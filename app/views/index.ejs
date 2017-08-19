@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<% include partials/head %>
+
+<body class="body-login">
+	
+	<nav class="navbar navbar-inverse navbar-static-top">
+		<div class="container-fluid">
+			 <div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#form-login" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+    		</div>
+
+    		 <div class="collapse navbar-collapse" id="form-login">
+				<form action="/autenticar" method="POST" class="navbar-form navbar-right">
+					<input type="text" class="form-control" value="<%= dados.usu_usuario %>" id="usu_usuario" name="usu_usuario" placeholder="Usuário">
+					<input type="password" class="form-control" id="usu_senha" name="usu_senha" placeholder="Senha">
+					<button type="submit" class="btn btn-success">Entrar</button>
+					<a class="btn btn-info pull right" href="/cadastro">Cadastrar-se</a>
+				</form>
+			</div>
+		</div>
+	</nav>
+	
+	<% if(validacao.length > 0){ %>
+		<div class="erros-login">
+			<h1>Erros</h1> 
+				<ul>
+					<% validacao.forEach(function(erro){ %>
+	  					<li><%= erro.msg %></li>
+	  				<% }); %>
+	  			</ul>
+		</div>
+	<% }; %>
+	
+	
+	 <% if(dados.length > 0){ %>
+		<div class="erros-login">
+			<h1>Erros</h1> 
+				<p>Usuário ou Senha inválidos!</a>
+		</div>
+	<% }; %>
+
+
+	<div class="container">
+		<div class="row">
+		<section class="imagem-login">
+			<img class="visible-*-inline-block" src="images/login/login.png" alt="">
+		</section>	
+		</div>
+	</div>
+
+</body>
+</html>

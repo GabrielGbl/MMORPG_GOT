@@ -1,0 +1,361 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+@keyframes mensagemErro {
+  0% {
+    transform: translate(250px, 0);
+    opacity: 0;
+    offset: 0;
+  }
+  25% {
+    transform: translate(150px, 0);
+    opacity: 0.6;
+    offset: 0.6;
+  }
+  50% {
+    transform: translate(50px, 0);
+    opacity: 0.8;
+    offset: 0.8;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+    offset: 1;
+  }
+}
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.slick-list:focus {
+  outline: none;
+}
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+}
+.slick-track:before, .slick-track:after {
+  content: "";
+  display: table;
+}
+.slick-track:after {
+  clear: both;
+}
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none;
+}
+[dir="rtl"] .slick-slide {
+  float: right;
+}
+.slick-slide img {
+  display: block;
+}
+.slick-slide.slick-loading img {
+  display: none;
+}
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+.slick-initialized .slick-slide {
+  display: block;
+}
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
+/* STYLE - ESTILOS GERAIS */
+* {
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-box-sizing: padding-box;
+  -webkit-box-sizing: padding-box;
+  box-sizing: padding-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: Arial;
+}
+
+/*  __________________NAVBAR__________________ */
+.navbar-inverse {
+  background: #272727;
+  margin: 0;
+}
+.navbar-inverse .navbar-form {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 0;
+}
+.navbar-inverse .navbar-form .form-control {
+  margin: 5px 0;
+}
+@media (max-width: 767px) {
+  .navbar-inverse .navbar-collapse {
+    width: 100%;
+    position: absolute;
+    background: #272727;
+  }
+}
+
+/*  __________________INDEX__________________ */
+.body-login {
+  overflow: hidden;
+  background: #060606;
+}
+
+.erros-login {
+  position: absolute;
+  width: 250px;
+  height: auto;
+  right: 0;
+  margin: 15px 0;
+  padding: 15px;
+  z-index: 2;
+  background: #D22020;
+  border-radius: 3px;
+  color: #FFF;
+  -webkit-animation: mensagemErro 300ms linear;
+  animation: mensagemErro 300ms linear;
+}
+.erros-login h1 {
+  font-weight: bold;
+  margin: 7px 0;
+}
+
+.imagem-login {
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  .imagem-login img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    margin-top: 25px;
+    transform: translateY(-50%);
+  }
+}
+@media (min-width: 769px) {
+  .imagem-login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -420px;
+    margin-top: -190px;
+    width: 840px;
+    height: 380px;
+    background: url("../images/login/login.png") no-repeat;
+  }
+}
+
+/*  __________________CADASTRO__________________ */
+.body-cadastro {
+  background: #060606;
+}
+
+.page-header h1 {
+  text-align: center;
+  color: #FFF;
+  font-size: 3em;
+}
+
+.erros {
+  line-height: 1.4em;
+}
+.erros h1 {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.form-cadastro {
+  margin: 25px auto;
+}
+.form-cadastro .cadastro {
+  margin: auto auto;
+}
+.form-cadastro .cadastro .form-control {
+  margin: 7px 0;
+}
+.form-cadastro .casa {
+  height: auto;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 30px auto;
+  text-align: center;
+}
+.form-cadastro .casa img {
+  margin: 0 auto;
+}
+.form-cadastro .btn-cadastro {
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+.form-cadastro .btn-cadastro .btn {
+  width: 100%;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 5px 15px;
+}
+
+/*  __________________JOGO__________________ */
+.body-jogo {
+  background-image: url("../images/mapa.png");
+  background-position: center;
+}
+
+@media (max-width: 768px) {
+  .casa {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    position: relative;
+  }
+}
+@media (min-width: 769px) {
+  .casa {
+    margin: 25px auto;
+  }
+}
+
+.barra-superior {
+  width: auto;
+  height: auto;
+  min-height: 90px;
+  padding: 10px;
+  margin: 50px auto;
+  background: rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+.barra-superior span {
+  color: #FFF;
+  display: block;
+  width: 100%;
+  font-weight: bold;
+}
+
+.barra-inferior {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  background: #272727;
+}
+.barra-inferior span {
+  color: #FFF;
+  font-weight: bold;
+}

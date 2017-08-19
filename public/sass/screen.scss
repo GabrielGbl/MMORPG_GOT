@@ -1,0 +1,13 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/utilities/sprites";
+
+@import "helpers/variaveis";
+@import "helpers/keyframes";
+@import "helpers/slick";
+
+@import "modules/style";
+@import "modules/navbar";
+@import "modules/index";
+@import "modules/cadastro";
+@import "modules/tela-jogo";

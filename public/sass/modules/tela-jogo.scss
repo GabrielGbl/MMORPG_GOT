@@ -1,0 +1,55 @@
+/*  __________________JOGO__________________ */
+
+
+.body-jogo{
+	background-image: url('../images/mapa.png');
+	background-position: center;
+}
+
+
+
+.casa{
+	@media (max-width:768px){
+		margin-left:auto;
+		margin-right:auto;
+		margin-top:15px;
+		position:relative;
+	}
+
+	@media (min-width:769px){
+		margin:25px auto;
+	}
+}
+
+
+.barra-superior{
+	width:auto;
+	height:auto;
+	min-height:90px;
+	padding:10px;
+	margin:50px auto;
+	background:rgba(0, 0, 0, 0.6);
+	text-align:center;
+
+	span{
+		color:#FFF;
+		display: block;
+		width: 100%;
+		font-weight: bold;
+	}
+}
+
+.barra-inferior{
+	width:100%;
+	height:auto;
+	padding:10px;
+	position:absolute;
+	bottom:0;
+	background:$cor-primaria;
+
+	span{
+		color:#FFF;
+		font-weight:bold;
+	}
+}
+

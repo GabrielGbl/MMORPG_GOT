@@ -1,0 +1,23 @@
+{
+  "name": "mmorpg_got",
+  "description": "Projeto de um MMORPG baseado na série Game of Thrones com a finalidade de estudar e aperfeiçoar o conhecimento nas seguintes tecnologias: - Node.js - Framework Express - Template Javascript EJS - MongoDB.",
+  "main": "app.js",
+  "authors": [
+    "Gabriel"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/GabrielGbl/MMORPG_GOT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1"
+  }
+}
