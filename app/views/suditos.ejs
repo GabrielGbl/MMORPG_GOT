@@ -1,0 +1,38 @@
+<section class="suditos">				
+	<div class="row col-x-12 fechar">
+		<a href="" class="pull-right">X</a>
+	</div>	
+	
+	<h3>Súditos</h3>	
+	
+	<form class="form-cadastro" action="ordenar_acao_suditos" method="POST">
+		<div class="row">
+			<div class="col-lg-6">
+				<div>
+					<select class="form-control" name="acao">
+						<option value="">Escolha a ação</option>
+						<option value="1">Coletar recursos (2G e 1H)</option>
+						<option value="1">Enforcar aldeão (3G e 2H)</option>
+						<option value="1">Ensinar história (1G e 5H)</option>
+						<option value="1">Ensinar magia (1G e 5H)</option>
+					</select>										
+				</div>
+			</div>			
+			<div class="col-lg-4">
+				<div class="form-group">
+					<input type="number" class="form-control" name="quantidade" id="quantidade" placeholder="Quantidade">									
+				</div>
+			</div>			
+			<div class="col-lg-2">
+				<div class="form-group row">
+					<button type="submit" class="center-block btn btn-primary">Ordenar</button>
+				</div>
+			</div>			
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<p>Senhor, você possui 8 súditos desocupados e 2 em atividade.</p>
+			</div>
+		</div>
+	</form>
+</section>

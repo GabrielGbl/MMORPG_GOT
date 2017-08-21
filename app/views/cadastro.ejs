@@ -51,46 +51,40 @@
 					<input type="password" class="form-control" id="usu_senha" name="usu_senha" placeholder="Senha" value="<%= dados.usu_senha %>" required>
 				</div>
 			</div>
-
-			<div class="row">
+				
+			<div class="row casas">
 				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 casa">
-					<img src="images/casas/stark.png" alt=""><br>
-					<input type="radio" id="usu_casa" name="usu_casa" value="stark">Stark
+					<label><img src="images/casas/stark.png" data-toggle="tooltip" title="Stark" class="img-check"><input type="radio" name="usu_casa" class="hidden" value="stark" autocomplete="off"></label>
 				</div>
 
 				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 casa">
-					<img src="images/casas/lannister.png" alt=""><br>
-					<input type="radio" id="usu_casa" name="usu_casa" value="lannister">Lannister
+					<label><img src="images/casas/lannister.png" class="img-check"  data-toggle="tooltip" title="Lannister"><input type="radio" name="usu_casa" class="hidden" value="lannister" autocomplete="off"></label>
 				</div>
 
 				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 casa">
-					<img src="images/casas/baratheon.png" alt=""><br>
-					<input type="radio" id="usu_casa" name="usu_casa" value="baratheon">Baratheon
+					<label><img src="images/casas/targaryen.png" class="img-check"  data-toggle="tooltip" title="Targaryen"><input type="radio" name="usu_casa" class="hidden" value="targaryen" autocomplete="off"></label>
 				</div>
 
 				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 casa">
-					<img src="images/casas/targaryen.png" alt=""><br>
-					<input type="radio" id="usu_casa" name="usu_casa" value="targaryen">Targaryen
+					<label><img src="images/casas/baratheon.png" class="img-check"  data-toggle="tooltip" title="Baratheon"><input type="radio" name="usu_casa" class="hidden" value="baratheon" autocomplete="off"></label>
+				</div>
+
+				
+				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 casa">
+					<label><img src="images/casas/greyjoy.png" class="img-check"  data-toggle="tooltip" title="Greyjoy"><input type="radio" name="usu_casa" class="hidden" value="greyjoy" autocomplete="off"></label>
+				</div>
+
+				
+				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 casa">
+					<label><img src="images/casas/tully.png" class="img-check"  data-toggle="tooltip" title="Tully"><input type="radio" name="usu_casa" class="hidden" value="tully" autocomplete="off"></label>
+				</div>
+							
+				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 casa">
+					<label><img src="images/casas/martell.png" class="img-check"  data-toggle="tooltip" title="Martell"><input type="radio" name="usu_casa" class="hidden" value="martell" autocomplete="off"></label>
 				</div>
 
 				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 casa">
-					<img src="images/casas/greyjoy.png" alt=""><br>
-					<input type="radio" id="usu_casa" name="usu_casa" value="greyjoy">Greyjoy
-				</div>
-
-				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 casa">
-					<img src="images/casas/tully.png" alt=""><br>
-					<input type="radio" id="usu_casa" name="usu_casa" value="tully">Tully
-				</div>
-			
-				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 casa">
-					<img src="images/casas/martell.png" alt=""><br>
-					<input type="radio" id="usu_casa" name="usu_casa" value="martell">Martell
-				</div>
-
-				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 casa">
-					<img src="images/casas/tyrell.png" alt=""><br>
-					<input type="radio" id="usu_casa" name="usu_casa" value="tyrell">Tyrell
+					<label><img src="images/casas/tyrell.png" class="img-check"  data-toggle="tooltip" title="Tyrell"><input type="radio" name="usu_casa" class="hidden" value="tyrell" autocomplete="off"></label>
 				</div>
 			</div>
 			
@@ -99,6 +93,42 @@
 			</div>
 		</form>
 	</div>
+	
+	<script>
+		$('.casas').slick({
+			dots:false,
+  			infinite:true,
+  			speed:500,
+			arrow:true,
+			slidesToShow: 4,
+			slidesToScroll:4,
+		  responsive: [
+		   	{
+		      breakpoint:992,
+			      settings: {
+			        slidesToShow:3,
+			        slidesToScroll:3
+			      }
+			  },
+		     {
+		      breakpoint: 768,
+			      settings: {
+			        slidesToShow: 2,
+			        slidesToScroll: 2
+			      }
+			  },
+			  {
+			    breakpoint: 480,
+			      settings: {
+			        slidesToShow: 1,
+			        slidesToScroll: 1
+			      }
+			  }
+			]
+		});
+		
+			
+	</script>
 
 </body>
 </html>
