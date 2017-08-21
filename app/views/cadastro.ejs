@@ -12,22 +12,30 @@
 			</form>
 		</div>
 	</nav>
-
-	<div class="container">
-		<section class="page-header">
- 			<h1>Cadastro de Jogador</h1>
-		</section>
-		<% if(validacao.length > 0){ %>
-		<section class="alert alert-danger erros">
+	
+	<% if(validacao.length > 0){ %>
+		<div class="erros-login">
 			<h1>Atenção!</h1>
-			<hr>
 			<ul>
 				<% validacao.forEach(function(erro){ %>
 					<li><%= erro.msg %></li>
 				<% }); %>
 			</ul>
-		</section>
-		<% } %>
+		</div>
+	<% } %>
+
+	<% if(usuario.length > 0){ %>
+		<div class="erros-login">
+			<h1>Atenção!</h1>
+			<p><%= usuario %></p>
+		</div>
+	<% } %>
+
+	<div class="container">
+		<section class="page-header">
+ 			<h1>Cadastro de Jogador</h1>
+		</section>		
+
 
 		<form action="/cadastrar" method="POST" class="form-cadastro">
 			<div class="row">
@@ -47,42 +55,42 @@
 			<div class="row">
 				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 casa">
 					<img src="images/casas/stark.png" alt=""><br>
-					<input type="radio" id="usu_casa" name="usu_casa" value="Stark">Stark
+					<input type="radio" id="usu_casa" name="usu_casa" value="stark">Stark
 				</div>
 
 				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 casa">
 					<img src="images/casas/lannister.png" alt=""><br>
-					<input type="radio" id="usu_casa" name="usu_casa" value="Lannister">Lannister
+					<input type="radio" id="usu_casa" name="usu_casa" value="lannister">Lannister
 				</div>
 
 				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 casa">
 					<img src="images/casas/baratheon.png" alt=""><br>
-					<input type="radio" id="usu_casa" name="usu_casa" value="Baratheon">Baratheon
+					<input type="radio" id="usu_casa" name="usu_casa" value="baratheon">Baratheon
 				</div>
 
 				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 casa">
 					<img src="images/casas/targaryen.png" alt=""><br>
-					<input type="radio" id="usu_casa" name="usu_casa" value="Targaryen">Targaryen
+					<input type="radio" id="usu_casa" name="usu_casa" value="targaryen">Targaryen
 				</div>
 
 				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 casa">
 					<img src="images/casas/greyjoy.png" alt=""><br>
-					<input type="radio" id="usu_casa" name="usu_casa" value="Greyjoy">Greyjoy
+					<input type="radio" id="usu_casa" name="usu_casa" value="greyjoy">Greyjoy
 				</div>
 
 				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 casa">
 					<img src="images/casas/tully.png" alt=""><br>
-					<input type="radio" id="usu_casa" name="usu_casa" value="Tully">Tully
+					<input type="radio" id="usu_casa" name="usu_casa" value="tully">Tully
 				</div>
 			
 				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 casa">
 					<img src="images/casas/martell.png" alt=""><br>
-					<input type="radio" id="usu_casa" name="usu_casa" value="Martell">Martell
+					<input type="radio" id="usu_casa" name="usu_casa" value="martell">Martell
 				</div>
 
 				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 casa">
 					<img src="images/casas/tyrell.png" alt=""><br>
-					<input type="radio" id="usu_casa" name="usu_casa" value="Tyrell">Tyrell
+					<input type="radio" id="usu_casa" name="usu_casa" value="tyrell">Tyrell
 				</div>
 			</div>
 			

@@ -317,26 +317,23 @@ body {
   background-position: center;
 }
 
-@media (max-width: 768px) {
-  .casa {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 15px;
-    position: relative;
+#btn-sair {
+  margin: 7px;
+}
+
+@media (max-width: 767px) {
+  .casa img {
+    display: block;
+    margin: 10px auto 15px auto;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .casa {
     margin: 25px auto;
   }
 }
 
 .barra-superior {
-  width: auto;
-  height: auto;
-  min-height: 90px;
-  padding: 10px;
-  margin: 50px auto;
   background: rgba(0, 0, 0, 0.6);
   text-align: center;
 }
@@ -346,16 +343,63 @@ body {
   width: 100%;
   font-weight: bold;
 }
+@media (min-width: 768px) {
+  .barra-superior {
+    min-height: 90px;
+    padding: 10px;
+    margin: 50px 0;
+  }
+}
+@media (max-width: 767px) and (orientation: portrait) {
+  .barra-superior {
+    min-height: 55px;
+    padding: 7px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 767px) and (orientation: landscape) {
+  .barra-superior {
+    min-height: 50px;
+    padding: 5px;
+    margin: 0 auto;
+  }
+}
 
 .barra-inferior {
   width: 100%;
   height: auto;
-  padding: 10px;
+  padding: 7px;
   position: absolute;
+  text-align: center;
   bottom: 0;
   background: #272727;
 }
 .barra-inferior span {
   color: #FFF;
   font-weight: bold;
+}
+
+.error {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  word-wrap: break-word;
+  text-align: center;
+}
+.error h1 {
+  color: #FFF;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+@media (min-width: 768px) {
+  .error h1 {
+    font-size: 4em;
+  }
+}
+@media (max-width: 768px) {
+  .error h1 {
+    font-size: 2em;
+  }
 }

@@ -5,33 +5,48 @@
 	
 	<nav class="navbar navbar-inverse navbar-static-top menu">
 		<div class="container-fluid">
-			<form action="/" class="navbar-form pull-right">
-				<button type="submit" class="btn btn-info">Sair</button>				
-			</form>
+			<button  type="submit" id="btn-sair" class="btn btn-info pull-right">Sair</button>	
 		</div>
 	</nav>
 
 	<div class="container">
 		<div class="row">
 			<section class="col-lg-3 col-md-3 col-sm-4 col-xs-12 casa">
-				<img src="images/casas/targaryen.png" alt="">
+			<picture>
+			    <source media="(max-width:767px) and (orientation:portrait)" srcset="images/casas/<%= casa %>-sm.png">
+			     <source media="(max-width:767px) and (orientation:landscape)" srcset="images/casas/<%= casa %>-xs.png">
+			    <img src="images/casas/<%= casa %>.png" alt="Brasão casa <%= casa %>">
+			</picture>
+				
 			</section>
-			<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12 casa">
+			<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
 				<section class="barra-superior">
 					<section class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
-						<img src="images/habilidades/magia.png" alt="Habilidade Magia">
+						<picture>
+							<source media="(max-width:767px)" srcset="images/habilidades/magia-xs.png">
+							<img src="images/habilidades/magia.png" alt="Habilidade Magia">
+						</picture>
 						<span>260</span>
 					</section>
 					<section class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
-						<img src="images/habilidades/defesa.png" alt="Habilidade Magia">
+						<picture>
+							<source media="(max-width:767px)" srcset="images/habilidades/defesa-xs.png">
+							<img src="images/habilidades/defesa.png" alt="Habilidade Defesa">
+						</picture>
 						<span>400</span>
 					</section>
 					<section class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
-						<img src="images/habilidades/sabedoria.png" alt="Habilidade Magia">
+						<picture>
+							<source media="(max-width:767px)" srcset="images/habilidades/sabedoria-xs.png">
+							<img src="images/habilidades/sabedoria.png" alt="Habilidade Sabedoria">
+						</picture>
 						<span>100</span>
 					</section>
 					<section class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
-						<img src="images/habilidades/forca.png" alt="Habilidade Magia">
+						<picture>
+							<source media="(max-width:767px)" srcset="images/habilidades/ataque-xs.png">
+							<img src="images/habilidades/ataque.png" alt="Habilidade Ataque">
+						</picture>
 						<span>300</span>
 					</section>
 				</section>
@@ -42,17 +57,27 @@
 	<section class="barra-inferior">
 		<div class="container">
 			<div class="row">
-				<section class="col-lg-1 col-md-1 col-sm-1 col-xs-4">
-					<img src="images/suditos.png" title="Súditos" alt="súditos">	
+				<section class="col-lg-1 col-md-1 col-sm-2 col-xs-4">
+					<picture>
+						<source media="(max-width:767px)" srcset="images/itens/suditos-xs.png">
+			  		 	<img src="images/itens/suditos.png" alt="Súditos">
+			  		</picture>
+					<span>25</span>	
 				</section>
-				<section class="col-lg-1 col-md-1 col-sm-1 col-xs-4">
-					<img src="images/pergaminho.png" title="Pergaminho" alt="pergaminho">	
+				<section class="col-lg-1 col-md-1 col-sm-2 col-xs-4">
+					<picture>
+						<source media="(max-width:767px)" srcset="images/itens/pergaminho-xs.png">
+			  			<img src="images/itens/pergaminho.png" alt="Pergaminhos">
+			  		</picture>
+					<span>25</span>
 				</section>
-
-				<div class="col-lg-2 col-md-1 col-sm-2 col-xs-4 pull-right">
-						<img src="images/moeda.png" title="Moeda" alt="Moeda"/>
-						<span>25</span>
-					</div>
+				<section class="col-lg-2 col-md-1 col-sm-2 col-xs-4 pull-right">
+					 <picture>
+					 	<source media="(max-width:767px)" srcset="images/itens/moeda-xs.png">
+			  		 	<img src="images/itens/moeda.png" alt="Moedas">
+			  		 </picture>
+					<span>25</span>
+				</section>
 				
 			</div>
 		</div>
