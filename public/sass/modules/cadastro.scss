@@ -5,19 +5,23 @@
 }
 
 .page-header{
-	h1{
-		text-align: center;
-		color:#FFF;
-		font-size:3em;
+	text-align: center;
+	color:#FFF;
+	@media (min-width:768px){
+		h1{			
+			font-size:3em;
+		}
+	} 
+	@media (max-width:768px){
+		h1{
+			font-size:1.5em;
+		}
 	} 
 }
 
-.erros{	
-	line-height: 1.4em;
-	h1{
-		font-size:1.4em;
-		font-weight:bold;
-	}
+.check{
+    opacity:0.3;
+	color:#121212;	
 }
 
 .form-cadastro{
@@ -38,14 +42,13 @@
 		font-weight: bold;
 		margin:30px auto;
 		text-align:center;	
-
+		outline:none;
 		img{
 			margin:0 auto;	
 		}
 	}
 
 	.btn-cadastro{
-		margin-top:50px;
 		margin-bottom:100px;
 
 		.btn{

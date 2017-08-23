@@ -3,61 +3,135 @@
 	<% include partials/head %>
 <body class="body-jogo">
 	
+	<section id="acoes-mobile" class="acoes-mobile">
+		<a href="">X</a>
+	</section>
+
 	<nav class="navbar navbar-inverse navbar-static-top menu">
-		<div class="container-fluid">
-			<form action="/" class="navbar-form pull-right">
-				<button type="submit" class="btn btn-info">Sair</button>				
-			</form>
+		<div class="container-fluid">			
+			<button  type="submit" id="btn-sair" class="btn btn-info pull-right">Sair</button>
 		</div>
-	</nav>
+	</nav>	
+
+
+	<% if(msg == 'A'){ %>
+		<div class="msg-erro">
+			<h1>Erro</h1> 
+				<ul>
+					<li>Operação inválida, verifique os campos!</li>
+	  			</ul>
+		</div>
+	<% }; %>
+
+	<% if(msg == 'B'){ %>
+		<div class="msg-sucesso">
+			<h1>Sucesso</h1> 
+				<ul>
+					<li>Ação iniciada!</li>
+	  			</ul>
+		</div>
+	<% }; %>
+	
+	<% if(msg == 'C'){ %>
+		<div class="msg-sucesso">
+			<h1>Sucesso</h1> 
+				<ul>
+					<li>Ação finalizada!</li>
+	  			</ul>
+		</div>
+	<% }; %>
+
+	<% if(msg == 'D'){ %>
+		<div class="msg-sucesso">
+			<h1>Senhor</h1> 
+				<ul>
+					<li>Sua ordem foi revogada!</li>
+	  			</ul>
+		</div>
+	<% }; %>
+
 
 	<div class="container">
 		<div class="row">
 			<section class="col-lg-3 col-md-3 col-sm-4 col-xs-12 casa">
-				<img src="images/casas/targaryen.png" alt="">
+				<picture>
+				    <source media="(max-width:767px) and (orientation:portrait)" data-toggle="tooltip" title="<%= casa %>" srcset="images/casas/<%= casa %>-xs.png">
+				     <source media="(max-width:767px) and (orientation:landscape)" data-toggle="tooltip" title="<%= casa %>" srcset="images/casas/<%= casa %>-xs.png">
+				    <img src="images/casas/<%= casa %>.png" data-toggle="tooltip" title="<%= casa %>" alt="Brasão casa <%= casa %>">
+				</picture>	
+				<section class="usuario">
+					<p><%= dadosJogo.usuario %></p>
+				</section>
+
 			</section>
-			<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12 casa">
+
+			<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
 				<section class="barra-superior">
 					<section class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
-						<img src="images/habilidades/magia.png" alt="Habilidade Magia">
-						<span>260</span>
+						<picture>
+							<source media="(max-width:767px)" data-toggle="tooltip" title="Magia" srcset="images/habilidades/magia-xs.png">
+							<img src="images/habilidades/magia.png" data-toggle="tooltip" title="Magia" alt="Habilidade Magia">
+						</picture>
+						<span><%= dadosJogo.magia %></span>
 					</section>
 					<section class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
-						<img src="images/habilidades/defesa.png" alt="Habilidade Magia">
-						<span>400</span>
+						<picture>
+							<source media="(max-width:767px)" data-toggle="tooltip" title="Defesa" srcset="images/habilidades/defesa-xs.png">
+							<img src="images/habilidades/defesa.png" data-toggle="tooltip" title="Defesa" alt="Habilidade Defesa">
+						</picture>
+						<span><%= dadosJogo.defesa %></span>
 					</section>
 					<section class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
-						<img src="images/habilidades/sabedoria.png" alt="Habilidade Magia">
-						<span>100</span>
+						<picture>
+							<source media="(max-width:767px)" data-toggle="tooltip" title="Sabedoria" srcset="images/habilidades/sabedoria-xs.png">
+							<img src="images/habilidades/sabedoria.png" data-toggle="tooltip" title="Sabedoria" alt="Habilidade Sabedoria">
+						</picture>
+						<span><%= dadosJogo.sabedoria %></span>
 					</section>
 					<section class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
-						<img src="images/habilidades/forca.png" alt="Habilidade Magia">
-						<span>300</span>
+						<picture>
+							<source media="(max-width:767px)" data-toggle="tooltip" title="Ataque" srcset="images/habilidades/ataque-xs.png">
+							<img src="images/habilidades/ataque.png" data-toggle="tooltip" title="Ataque" alt="Habilidade Ataque">
+						</picture>
+						<span><%= dadosJogo.ataque %></span>
 					</section>
 				</section>
+
+				<section id="acoes" class="acoes"></section>
+
 			</div>
+			
 		</div>
 	</div>
 
 	<section class="barra-inferior">
 		<div class="container">
 			<div class="row">
-				<section class="col-lg-1 col-md-1 col-sm-1 col-xs-4">
-					<img src="images/suditos.png" title="Súditos" alt="súditos">	
+				<section id="btn-suditos" rel="modal" class="col-lg-1 col-md-2 col-sm-2 col-xs-4 itens">
+					<picture>
+						<source media="(max-width:767px)" data-toggle="tooltip" title="Súditos" srcset="images/itens/suditos-xs.png">
+			  		 	<img src="images/itens/suditos.png" data-toggle="tooltip" title="Súditos" alt="Súditos" >
+			  		</picture>
+					<span><%= dadosJogo.suditos %></span>	
 				</section>
-				<section class="col-lg-1 col-md-1 col-sm-1 col-xs-4">
-					<img src="images/pergaminho.png" title="Pergaminho" alt="pergaminho">	
+				<section id="btn-pergaminhos" rel="modal" class="col-lg-1 col-md-2 col-sm-2 col-xs-4 itens">
+					<picture >
+						<source media="(max-width:767px)" data-toggle="tooltip" title="Pergaminhos" srcset="images/itens/pergaminho-xs.png">
+			  			<img src="images/itens/pergaminho.png" data-toggle="tooltip" title="Pergaminhos" alt="Pergaminhos">
+			  		</picture>
+					<span><%= dadosJogo.pergaminhos %></span>
 				</section>
-
-				<div class="col-lg-2 col-md-1 col-sm-2 col-xs-4 pull-right">
-						<img src="images/moeda.png" title="Moeda" alt="Moeda"/>
-						<span>25</span>
-					</div>
+				<section class="col-lg-2 col-md-2 col-sm-2 col-xs-4 pull-right itens">
+					 <picture>
+					 	<source media="(max-width:767px)" data-toggle="tooltip" title="Moedas" srcset="images/itens/moeda-xs.png">
+			  		 	<img src="images/itens/moeda.png" data-toggle="tooltip" title="Moedas" alt="Moedas">
+			  		 </picture>
+					<span><%= dadosJogo.moeda %></span>
+				</section>
 				
 			</div>
 		</div>
 	</section>
-
 
 </body>
 </html>

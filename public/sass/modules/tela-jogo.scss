@@ -4,46 +4,186 @@
 .body-jogo{
 	background-image: url('../images/mapa.png');
 	background-position: center;
+	overflow: hidden;
 }
 
-
+#btn-sair{
+	margin:7px;
+}
 
 .casa{
-	@media (max-width:768px){
-		margin-left:auto;
-		margin-right:auto;
-		margin-top:15px;
-		position:relative;
+	@media (max-width:767px){
+		img{
+			display:block;
+			margin:10px auto 15px auto;
+		}
 	}
 
-	@media (min-width:769px){
-		margin:25px auto;
+	@media (min-width:768px){
+		padding:0;
+		img{
+			display:block;
+			margin:25px auto;
+		}
+	}
+
+	.usuario{
+		background:rgba(0, 0, 0, 0.7);		
+		text-align:center;
+
+		@media (max-width:767px){
+			width:auto;
+			padding:5px 15px;
+			margin:5px auto;
+			p{
+				color:$cor-secundaria;
+				font:{
+					size:1em;
+					weight:bold;
+				}
+			}
+		}
+		@media (min-width:768px){
+			padding:7px;
+			p{
+				color:$cor-secundaria;
+				font:{
+					size:1.5em;
+					weight:bold;
+				}
+			}
+		}
+		
 	}
 }
 
-
 .barra-superior{
-	width:auto;
-	height:auto;
-	min-height:90px;
-	padding:10px;
-	margin:50px auto;
-	background:rgba(0, 0, 0, 0.6);
+	background:rgba(0, 0, 0, 0.7);
 	text-align:center;
 
 	span{
 		color:#FFF;
 		display: block;
-		width: 100%;
+		width:100%;
 		font-weight: bold;
 	}
+
+	@media (min-width:768px){
+		min-height:90px;	
+		padding:10px;
+		margin:50px 0 25px 0;
+	}
+
+	@media (max-width:767px) and (orientation:portrait){
+		min-height:55px;
+		padding:7px;
+		margin:0 auto;	
+		span{
+			font-size:0.8em;
+		}
+	}
+
+	@media (max-width:767px) and (orientation:landscape){
+		min-height:50px;
+		padding:5px;
+		margin:0 auto;	
+
+		span{
+			font-size:0.8em;
+		}
+	}
+}
+
+.acoes-mobile{
+	position:absolute;
+	z-index:1;
+	display:none;	
+	min-height:100%;
+	color:#FFF;
+	text-align:center;
+	background:$cor-primaria;
+	
+	.fechar a{
+			color:#FFF;
+			font-size:1.4em;
+			font-weight:bold;
+			margin:0 20px;
+			text-decoration: none;
+	}
+
+	.pergaminhos{
+		width:100%;
+		height:auto;
+		margin-top:60px;
+		padding:15px;		
+	}
+
+	.suditos{
+		width:100%;
+		height:auto;
+		margin-top:60px;
+		padding:15px;		
+	
+		.form-cadastro{
+			width:100%;
+			.form-control{
+				margin:7px auto;
+			}
+		}
+	}
+
+	ul{
+		margin:15px 0;
+		li{
+			margin:7px 0;
+		}
+	}
+	h3{		
+		font-size:1.2em;
+		text-align:center;
+	}
+	p{
+		font-size:1em;
+	}
+}
+
+.acoes{		
+		display:none;
+		background:rgba(0,0,0, 0.7);
+		color:$cor-secundaria;	
+		height:auto;
+		padding:15px;
+
+		.fechar a{
+			color:#FFF;
+			font-size:1.4em;
+			font-weight:bold;
+			margin:0 20px;
+			text-decoration: none;
+		}
+		
+		ul{
+			margin:15px 0;
+			li{
+				margin:7px 0;
+			}
+		}
+		h3{		
+			font-size:1.2em;
+			text-align:center;
+		}
+		p{
+			font-size:1em;
+		}
 }
 
 .barra-inferior{
 	width:100%;
 	height:auto;
-	padding:10px;
+	padding:7px;
 	position:absolute;
+	z-index:2;
+	text-align:center;
 	bottom:0;
 	background:$cor-primaria;
 
@@ -51,5 +191,12 @@
 		color:#FFF;
 		font-weight:bold;
 	}
+
+	.itens{
+		width:auto;
+	}
 }
+
+
+
 
