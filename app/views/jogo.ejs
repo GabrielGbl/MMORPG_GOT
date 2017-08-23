@@ -7,12 +7,49 @@
 		<a href="">X</a>
 	</section>
 
-
 	<nav class="navbar navbar-inverse navbar-static-top menu">
 		<div class="container-fluid">			
-			<button  type="submit" id="btn-sair" class="btn btn-info pull-right">Sair</button>	
+			<button  type="submit" id="btn-sair" class="btn btn-info pull-right">Sair</button>
 		</div>
 	</nav>	
+
+
+	<% if(msg == 'A'){ %>
+		<div class="msg-erro">
+			<h1>Erro</h1> 
+				<ul>
+					<li>Operação inválida, verifique os campos!</li>
+	  			</ul>
+		</div>
+	<% }; %>
+
+	<% if(msg == 'B'){ %>
+		<div class="msg-sucesso">
+			<h1>Sucesso</h1> 
+				<ul>
+					<li>Ação iniciada!</li>
+	  			</ul>
+		</div>
+	<% }; %>
+	
+	<% if(msg == 'C'){ %>
+		<div class="msg-sucesso">
+			<h1>Sucesso</h1> 
+				<ul>
+					<li>Ação finalizada!</li>
+	  			</ul>
+		</div>
+	<% }; %>
+
+	<% if(msg == 'D'){ %>
+		<div class="msg-sucesso">
+			<h1>Senhor</h1> 
+				<ul>
+					<li>Sua ordem foi revogada!</li>
+	  			</ul>
+		</div>
+	<% }; %>
+
 
 	<div class="container">
 		<div class="row">

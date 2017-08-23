@@ -55,25 +55,25 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-@keyframes mensagemErro {
+@keyframes msg {
   0% {
     transform: translate(250px, 0);
-    opacity: 0;
-    offset: 0;
+    opacity: 1;
+    offset: 0.1;
   }
-  25% {
-    transform: translate(150px, 0);
-    opacity: 0.6;
-    offset: 0.6;
-  }
-  50% {
-    transform: translate(50px, 0);
-    opacity: 0.8;
-    offset: 0.8;
-  }
-  100% {
+  10% {
     transform: translate(0, 0);
     opacity: 1;
+    offset: 0.2;
+  }
+  90% {
+    transform: translate(0, 0);
+    opacity: 1;
+    offset: 0.9;
+  }
+  100% {
+    transform: translate(250px, 0);
+    opacity: 0;
     offset: 1;
   }
 }
@@ -342,6 +342,33 @@ body {
   font-family: Arial;
 }
 
+/* MENSAGENS ERRO */
+.msg-erro, .msg-sucesso {
+  position: absolute;
+  width: 250px;
+  height: auto;
+  right: 0;
+  margin: 15px 0;
+  padding: 15px;
+  z-index: 2;
+  border-radius: 3px;
+  color: #FFF;
+  -webkit-animation: msg 7s forwards;
+  animation: msg 7s forwards;
+}
+.msg-erro h1, .msg-sucesso h1 {
+  font-weight: bold;
+  margin: 7px 0;
+}
+
+.msg-erro {
+  background: #D22020;
+}
+
+.msg-sucesso {
+  background: #1D932C;
+}
+
 /*  __________________NAVBAR__________________ */
 .navbar-inverse {
   background: #272727;
@@ -368,25 +395,6 @@ body {
 .body-login {
   overflow: hidden;
   background: #060606;
-}
-
-.erros-login {
-  position: absolute;
-  width: 250px;
-  height: auto;
-  right: 0;
-  margin: 15px 0;
-  padding: 15px;
-  z-index: 2;
-  background: #D22020;
-  border-radius: 3px;
-  color: #FFF;
-  -webkit-animation: mensagemErro 300ms linear;
-  animation: mensagemErro 300ms linear;
-}
-.erros-login h1 {
-  font-weight: bold;
-  margin: 7px 0;
 }
 
 .imagem-login {
@@ -440,14 +448,6 @@ body {
   color: #121212;
 }
 
-.erros {
-  line-height: 1.4em;
-}
-.erros h1 {
-  font-size: 1.4em;
-  font-weight: bold;
-}
-
 .form-cadastro {
   margin: 25px auto;
 }
@@ -483,6 +483,7 @@ body {
 .body-jogo {
   background-image: url("../images/mapa.png");
   background-position: center;
+  overflow: hidden;
 }
 
 #btn-sair {

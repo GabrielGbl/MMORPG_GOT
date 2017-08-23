@@ -1,10 +1,30 @@
 <div class="pergaminhos">
 	<div class="row col-x-12 fechar">
-		<a href="" class="pull-right">X</a>
+		<a href="/jogo" class="pull-right">X</a>
 	</div>							
 	<h3>Pergaminhos</h3>	
 	<ul>
-		<li>1 enforcamento(s) programado - restam 00000 segundos - <a href="#">revogar ordem</a></li>
-		<li>1 enforcamento(s) programado - restam 00000 segundos - <a href="#">revogar ordem</a></li>
+		<% acoes.forEach(function(acao){ %>
+			<%
+				let acao_nome = '';
+				switch(parseInt(acao.acao)){
+					case 1: acao_nome = 'Aldeão(s) coletando recursos';
+					break;
+					case 2: acao_nome = 'Aldeão(s) em estudo de história';
+					break;
+					case 3: acao_nome = 'Aldeão(s) em treinamento de ataque';
+					break;
+					case 4: acao_nome = 'Aldeão(s) em treinamento de defesa';
+					break;
+					case 5: acao_nome = 'Aldeão(s) em estudo de magia';
+					break;
+				}
+				
+				let date = new Date();
+				let momentoAtual = date.getTime();
+				let tempo_restante = Math.round((acao.acao_termina - momentoAtual) /1000);
+			%>
+			<li><%= acao.quantidade %><%= acao_nome %> - restam <span class="tempo_restante"><%= tempo_restante %></span> segundos - <a href="/revogar_acao?id=<%= acao._id %>">revogar ordem</a> </li>
+		<% }); %>
 	</ul>
 </div>

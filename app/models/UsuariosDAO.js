@@ -1,3 +1,5 @@
+const crypto = require('crypto');
+
 function UsuariosDAO(connection){
 	this._connection = connection();
 }
@@ -5,6 +7,9 @@ function UsuariosDAO(connection){
 UsuariosDAO.prototype.inserirUsuario = function(usuario, req, res){
 	this._connection.open(function(error, mongoclient){
 		mongoclient.collection("usuarios", function(error, collection){
+
+			let senha_criptografada = crypto.createHash("md5").update(usuario.usu_senha).digest("hex");
+			usuario.usu_senha = senha_criptografada;
 			collection.insert(usuario)
 			.then(function(result){
 				mongoclient.close();
@@ -24,6 +29,8 @@ UsuariosDAO.prototype.inserirUsuario = function(usuario, req, res){
 UsuariosDAO.prototype.autenticar = function(usuario, req, res){
 	this._connection.open(function(error, mongoclient){
 		mongoclient.collection("usuarios", function(error, collection){
+			let senha_criptografada = crypto.createHash("md5").update(usuario.usu_senha).digest("hex");
+			usuario.usu_senha = senha_criptografada;
 			collection.find(usuario).toArray()
 				.then(function(result){
 					if(result[0] != undefined){

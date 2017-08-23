@@ -9,7 +9,7 @@ module.exports.cadastrar = function(application, req, res){
 	req.assert('usu_nome', 'Nome é obrigatório.').notEmpty();
 	req.assert('usu_usuario', 'Usuário é obrigatório.').notEmpty();
 	req.assert('usu_senha', 'Senha é obrigatório.').notEmpty();
-	req.assert('usu_senha', 'Senha mínimo de 8 caracteres.').len(8,20);
+	req.assert('usu_senha', 'Senha mínimo de 8 e máximo de 20 caracteres.').len(8,20);
 	req.assert('usu_casa', 'Escolha da casa é obrigatório.').notEmpty();
 
 	let erros = req.validationErrors();

@@ -4,6 +4,7 @@
 .body-jogo{
 	background-image: url('../images/mapa.png');
 	background-position: center;
+	overflow: hidden;
 }
 
 #btn-sair{
@@ -195,4 +196,7 @@
 		width:auto;
 	}
 }
+
+
+
 
