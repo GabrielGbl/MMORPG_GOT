@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressValidator());
 
 app.use(expressSession({
-	secret:'oksdaopkdaspkrapoj',
+	secret:'',
 	resave: false, //CRIA UMA SESSÃO NO SERVIDOR SEMPRE QUE TIVER O REQUEST
 	saveUninitialized:false //CRIA UMA NOVA SESSÃO SEMPRE QUE FOR MODIFICADA
 }));
